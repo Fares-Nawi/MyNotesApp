@@ -27,10 +27,11 @@ Open the project in your preferred development environment (e.g., Android Studio
 
 ![Screenshot 1](app/sampledata/welcomeActivity.png)
 ![Screenshot 2](app/sampledata/registerActivity.png)
-![Screenshot 1](app/sampledata/LoginActivity.png)
-![Screenshot 2](app/sampledata/notesActivity.png)
-![Screenshot 1](app/sampledata/writeNotesActivity.png)
-![Screenshot 2](app/sampledata/deleteEditActivity.png)
+![Screenshot 3](app/sampledata/LoginActivity.png)
+![Screenshot 4](app/sampledata/notesActivity.png)
+![Screenshot 5](app/sampledata/notesActivity2.png)
+![Screenshot 6](app/sampledata/writeNotesActivity.png)
+![Screenshot 7](app/sampledata/deleteEditActivity.png)
 
 ## Dependencies
 
