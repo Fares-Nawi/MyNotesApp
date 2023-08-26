@@ -25,8 +25,8 @@ Open the project in your preferred development environment (e.g., Android Studio
 
 ## Screenshots
 
-![Screenshot 1](/screenshots/screenshot1.png)
-![Screenshot 2](/screenshots/screenshot2.png)
+![Screenshot 1](app/sampledata/welcomeActivity.png)
+![Screenshot 2](app/sampledata/registerActivity.png)
 
 ## Dependencies
 
