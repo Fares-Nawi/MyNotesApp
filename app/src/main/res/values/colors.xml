@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="coolColor">#181818</color>
+    <color name="welcomePageBackgroundColor">#1A252E</color>
+    <color name="transparent_light_gray">#80D3D3D3</color>
+    <!-- Very Light Gray (More Transparent) -->
+    <color name="transparent_very_light_gray">#40D3D3D3</color>
+
+    <!-- Light Blue (More Transparent) -->
+    <color name="transparent_light_blue">#4080C8E7</color>
+
+    <!-- Light Green (More Transparent) -->
+    <color name="transparent_light_green">#4080C56E</color>
+
+    <!-- Light Pink (More Transparent) -->
+    <color name="transparent_light_pink">#40FFA8B3</color>
+
+    <!-- Light Purple (More Transparent) -->
+    <color name="transparent_light_purple">#40B39DDB</color>
+
+    <!-- Light Orange (More Transparent) -->
+    <color name="transparent_light_orange">#40FFB74D</color>
+
+    <!-- Light Yellow (More Transparent) -->
+    <color name="transparent_light_yellow">#40FFD54F</color>
+    <!-- Very Light Gray (Opaque) -->
+    <color name="opaque_very_light_gray">#D3D3D3</color>
+
+    <!-- Light Blue (Opaque) -->
+    <color name="opaque_light_blue">#80C8E7</color>
+
+    <!-- Light Green (Opaque) -->
+    <color name="opaque_light_green">#80C56E</color>
+
+    <!-- Light Pink (Opaque) -->
+    <color name="opaque_light_pink">#FFA8B3</color>
+
+    <!-- Light Purple (Opaque) -->
+    <color name="opaque_light_purple">#B39DDB</color>
+
+    <!-- Dark Purple (Opaque) -->
+    <color name="opaque_dark_purple">#8A3C8E</color>
+
+    <!-- Light Orange (Opaque) -->
+    <color name="opaque_light_orange">#FFB74D</color>
+
+    <!-- Light Yellow (Opaque) -->
+    <color name="opaque_light_yellow">#FFD54F</color>
+</resources>
