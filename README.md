@@ -23,10 +23,21 @@ Follow these steps to set up and run the app on your local machine:
 5. **Build and Run:**
 Open the project in your preferred development environment (e.g., Android Studio), build the app, and run it on an Android emulator or a physical device.
 
+## Video
+
+https://github.com/Fares-Nawi/MyNotesApp/assets/89580422/e825a2f5-7dc6-4c11-8fcc-5f8f74a85b93
+
+
+
 ## Screenshots
 
 ![Screenshot 1](app/sampledata/welcomeActivity.png)
 ![Screenshot 2](app/sampledata/registerActivity.png)
+![Screenshot 3](app/sampledata/LoginActivity.png)
+![Screenshot 4](app/sampledata/notesActivity.png)
+![Screenshot 5](app/sampledata/notesActivity2.png)
+![Screenshot 6](app/sampledata/writeNotesActivity.png)
+![Screenshot 7](app/sampledata/deleteEditActivity.png)
 
 ## Dependencies
 
