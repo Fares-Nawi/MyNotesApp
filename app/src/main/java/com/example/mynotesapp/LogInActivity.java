@@ -11,6 +11,7 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,7 +29,7 @@ public class LogInActivity extends AppCompatActivity {
 
     private static final String TAG = "LogInActivity";
     private EditText edtTxtName, edtTxtPassword;
-    private TextView txtWarnName,txtWarnPassword;
+
 
     private Button btnLogIn,btnRegisterRedirect;
 
@@ -54,6 +55,9 @@ public class LogInActivity extends AppCompatActivity {
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 initLogin();
             }
         });
@@ -80,8 +84,7 @@ public class LogInActivity extends AppCompatActivity {
 
     private void showSnackBar(){
         Log.d(TAG,"showSnackBar: Started");
-        txtWarnName.setVisibility(View.GONE);
-        txtWarnPassword.setVisibility(View.GONE);
+
 
 
         Snackbar.make(parent,"User LogedIn",Snackbar.LENGTH_INDEFINITE)
@@ -102,8 +105,13 @@ public class LogInActivity extends AppCompatActivity {
         String Name = edtTxtName.getText().toString();
         String Password = edtTxtPassword.getText().toString();
         if(Name.equals("")){
-            txtWarnName.setVisibility(View.VISIBLE);
-            txtWarnName.setText("Enter your Name");
+            Snackbar.make(parent,"Enter your Username",Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Dismiss", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    }).show();
             // Check if the device supports vibration
             if (vibrator.hasVibrator()) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -120,8 +128,13 @@ public class LogInActivity extends AppCompatActivity {
             return false;
         }
         if(Password.equals("")){
-            txtWarnPassword.setVisibility(View.VISIBLE);
-            txtWarnPassword.setText("Enter your password");
+            Snackbar.make(parent,"Enter your password",Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Dismiss", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    }).show();
             // Check if the device supports vibration
             if (vibrator.hasVibrator()) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -179,8 +192,6 @@ public class LogInActivity extends AppCompatActivity {
         edtTxtPassword = findViewById(R.id.Password);
 
 
-        txtWarnName = findViewById(R.id.txtWarnName);
-        txtWarnPassword = findViewById(R.id.txtWarnPassword);
 
         btnLogIn = findViewById(R.id.login);
         btnRegisterRedirect = findViewById(R.id.registerRedirect);
@@ -197,4 +208,6 @@ public class LogInActivity extends AppCompatActivity {
             return new ArrayList<>();
         }
     }
+
+
 }

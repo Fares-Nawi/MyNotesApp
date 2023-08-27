@@ -71,18 +71,6 @@
         app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
-    <TextView
-        android:id="@+id/txtWarnGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FF0000"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="1.0" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -126,39 +114,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.89" />
-
-    <TextView
-        android:id="@+id/txtWarnName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FF0000"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/Name"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <TextView
-        android:id="@+id/txtWarnPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
-        android:text="TextView"
-        android:textColor="#FF0000"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/Password"
-        app:layout_constraintStart_toStartOf="@+id/guideline4" />
-
-    <TextView
-        android:id="@+id/txtWarnConfirmPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:text="TextView"
-        android:textColor="#FF0000"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/confirmPassword"
-        app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"

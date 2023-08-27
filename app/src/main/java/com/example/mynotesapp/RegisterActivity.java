@@ -5,9 +5,15 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+import android.text.InputType;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -22,15 +28,21 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.spec.KeySpec;
 import java.util.ArrayList;
+
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
 
 public class RegisterActivity extends AppCompatActivity  {
 
     private static final String TAG = "MainActivity";
     private EditText edtTxtName, edtTxtPassword, edtTxtConfirmPassword;
-    private TextView txtWarnName,txtWarnPassword,txtWarnConfirmPassword,txtWarnGender;
-    private Button btnPickImage,btnTakePhoto,btnRegister,btnLogInRedirect;
-    private RadioGroup rgGender;
+
+    private Button btnRegister,btnLogInRedirect;
+
     private ConstraintLayout parent;
     private static String file = "Users.ser";
     private static ArrayList<User> allUsers = new ArrayList<>();
@@ -54,6 +66,8 @@ public class RegisterActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 try {
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                     initRegister();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -91,10 +105,7 @@ public class RegisterActivity extends AppCompatActivity  {
 
     private void showSnackBar(){
         Log.d(TAG,"showSnackBar: Started");
-        txtWarnName.setVisibility(View.GONE);
-        txtWarnPassword.setVisibility(View.GONE);
-        txtWarnConfirmPassword.setVisibility(View.GONE);
-        txtWarnGender.setVisibility(View.GONE);
+
 
         Snackbar.make(parent,"User Registered",Snackbar.LENGTH_INDEFINITE)
                 .setAction("Dismiss", new View.OnClickListener() {
@@ -106,25 +117,101 @@ public class RegisterActivity extends AppCompatActivity  {
     }
     private boolean validateData(){
         Log.d(TAG, "validateData: Started");
+
+        // Get the Vibrator service
+        Vibrator vibrator = getSystemService(Vibrator.class);
+
         if(edtTxtName.getText().toString().equals("")){
-            txtWarnName.setVisibility(View.VISIBLE);
-            txtWarnName.setText("Enter your Name");
+            Snackbar.make(parent,"Enter your Username",Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Dismiss", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    }).show();
+            // Check if the device supports vibration
+            if (vibrator.hasVibrator()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    // Create a vibration effect for the specified duration
+                    VibrationEffect effect = VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE);
+
+                    // Vibrate the device
+                    vibrator.vibrate(effect);
+                } else {
+                    // For older versions, vibrate without specifying a pattern
+                    vibrator.vibrate(500);
+                }
+            }
             return false;
         }
         if(edtTxtPassword.getText().toString().equals("")){
-            txtWarnPassword.setVisibility(View.VISIBLE);
-            txtWarnPassword.setText("Enter your password");
+            Snackbar.make(parent,"Enter a password",Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Dismiss", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    }).show();
+            // Check if the device supports vibration
+            if (vibrator.hasVibrator()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    // Create a vibration effect for the specified duration
+                    VibrationEffect effect = VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE);
+
+                    // Vibrate the device
+                    vibrator.vibrate(effect);
+                } else {
+                    // For older versions, vibrate without specifying a pattern
+                    vibrator.vibrate(500);
+                }
+            }
             return false;
         }
         if(edtTxtConfirmPassword.getText().toString().equals("")){
-            txtWarnConfirmPassword.setVisibility(View.VISIBLE);
-            txtWarnConfirmPassword.setText("Confirm your password");
+            Snackbar.make(parent,"Confirm your Password",Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Dismiss", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    }).show();
+            // Check if the device supports vibration
+            if (vibrator.hasVibrator()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    // Create a vibration effect for the specified duration
+                    VibrationEffect effect = VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE);
+
+                    // Vibrate the device
+                    vibrator.vibrate(effect);
+                } else {
+                    // For older versions, vibrate without specifying a pattern
+                    vibrator.vibrate(500);
+                }
+            }
             return false;
         }
 
         if(!edtTxtPassword.getText().toString().equals(edtTxtConfirmPassword.getText().toString())){
-            txtWarnConfirmPassword.setVisibility(View.VISIBLE);
-            txtWarnConfirmPassword.setText("Password doesn't match");
+            Snackbar.make(parent,"Password doesn't much",Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Dismiss", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    }).show();
+            // Check if the device supports vibration
+            if (vibrator.hasVibrator()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    // Create a vibration effect for the specified duration
+                    VibrationEffect effect = VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE);
+
+                    // Vibrate the device
+                    vibrator.vibrate(effect);
+                } else {
+                    // For older versions, vibrate without specifying a pattern
+                    vibrator.vibrate(500);
+                }
+            }
             return false;
         }
 
@@ -137,6 +224,19 @@ public class RegisterActivity extends AppCompatActivity  {
 
                         }
                     }).show();
+            // Check if the device supports vibration
+            if (vibrator.hasVibrator()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    // Create a vibration effect for the specified duration
+                    VibrationEffect effect = VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE);
+
+                    // Vibrate the device
+                    vibrator.vibrate(effect);
+                } else {
+                    // For older versions, vibrate without specifying a pattern
+                    vibrator.vibrate(500);
+                }
+            }
             return false;
         }
 
@@ -155,15 +255,11 @@ public class RegisterActivity extends AppCompatActivity  {
 
 
 
-        txtWarnName = findViewById(R.id.txtWarnName);
-        txtWarnPassword = findViewById(R.id.txtWarnPassword);
-        txtWarnConfirmPassword = findViewById(R.id.txtWarnConfirmPassword);
-        txtWarnGender = findViewById(R.id.txtWarnGender);
-
         parent = findViewById(R.id.parent);
     }
 
     private static void saveUsersToFileAndUpdate(ArrayList<User> users, String filename, Context context) {
+
         try (FileOutputStream fos = context.openFileOutput(filename, Context.MODE_PRIVATE);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
@@ -200,6 +296,8 @@ public class RegisterActivity extends AppCompatActivity  {
         System.out.println("user added to the database");
         return true;
     }
+
+
 
 
 }

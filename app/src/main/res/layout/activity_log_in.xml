@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LogInActivity"
-    android:background="@drawable/peakpxbackground">
+    android:background="@drawable/peakpxbackground"
+    android:windowSoftInputMode="adjustResize">
 
 
     <EditText
@@ -68,26 +69,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.2372449" />
-
-    <TextView
-        android:id="@+id/txtWarnName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FF0000"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/Name"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <TextView
-        android:id="@+id/txtWarnPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
-        android:text="TextView"
-        android:textColor="#FF0000"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/Password" />
 
 
     <androidx.constraintlayout.widget.Guideline
