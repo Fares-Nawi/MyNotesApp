@@ -21,12 +21,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
-//TODO and you have to add delete button on each note which is entitled the user to delete any old note
-// YOU have to complete the edit activity :
-// SEND "UserName,text,index" from NotesActivity ==> edtNoteActivity :: change the note and then delete the old note from the dataBase and add the new Note to the User account
-//TODO you have to make a welcome page
 
-// TODO change the colors and add some design to the EditText fields and to the Buttons
 public class NotesActivity extends AppCompatActivity {
     private static final String TAG = "NotesActivity";
 

@@ -91,8 +91,6 @@ public class RegisterActivity extends AppCompatActivity  {
             showSnackBar();
 
 
-            //todo fix the error here
-
             User user = new User(edtTxtName.getText().toString(),edtTxtPassword.getText().toString());
             allUsers = loadUsersFromFile(file,RegisterActivity.this);
             addUser(allUsers,user);

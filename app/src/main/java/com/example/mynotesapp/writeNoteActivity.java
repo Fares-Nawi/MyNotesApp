@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-//TODO when i add a note the notes in NotesActivity gone
+
 public class writeNoteActivity extends AppCompatActivity {
     private static final String TAG = "writeNoteActivity";
     private static String file = "Users.ser";
